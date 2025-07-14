@@ -1,6 +1,5 @@
 # Trivia App
 
-[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/ImadZM/TriviaApp)
 
 A dynamic and engaging trivia quiz application built with React and Vite. Test your knowledge across various categories and difficulty levels. The app fetches questions from a live API, provides instant feedback, and tracks your score.
 
