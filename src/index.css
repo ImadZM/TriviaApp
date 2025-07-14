@@ -116,15 +116,15 @@
   }
 
   .answer {
-    @apply text-primary bg-gradient-to-br from-light-100 to-dark-100 hover:bg-gradient-to-bl rounded-lg px-5 py-2.5 text-center me-2 w-[50%] sm:w-[40%] font-press-start;
+    @apply text-primary bg-gradient-to-br from-light-100 to-dark-100 hover:bg-gradient-to-bl rounded-lg px-5 py-2.5 text-center me-2 w-[50%] break-words sm:w-[40%] font-press-start;
   }
 
   .answerCorrect {
-    @apply text-light-100 bg-gradient-to-br from-green-900 to-green-500 hover:bg-gradient-to-bl rounded-lg px-5 py-2.5 text-center me-2 w-[50%] sm:w-[40%] font-press-start;
+    @apply text-light-100 bg-gradient-to-br from-green-900 to-green-500 hover:bg-gradient-to-bl rounded-lg px-5 py-2.5 text-center me-2 w-[50%] break-words sm:w-[40%] font-press-start;
   }
 
   .answerWrong {
-    @apply text-light-100 bg-gradient-to-br from-red-900 to-red-500 hover:bg-gradient-to-bl rounded-lg px-5 py-2.5 text-center me-2 w-[50%] sm:w-[40%] font-press-start;
+    @apply text-light-100 bg-gradient-to-br from-red-900 to-red-500 hover:bg-gradient-to-bl rounded-lg px-5 py-2.5 text-center me-2 w-[50%] break-words sm:w-[40%] font-press-start;
   }
 
   .result {
