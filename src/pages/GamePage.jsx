@@ -43,7 +43,7 @@ const GamePage = () => {
       const baseUrl = 'https://the-trivia-api.com/v2/questions'
 
       const url = category === 'random' ?
-        `${baseUrl}?limit=1&difficulties=${difficulty}` :
+        `${baseUrl}?limit=20&difficulties=${difficulty}` :
         `${baseUrl}?limit=20&categories=${category}&difficulties=${difficulty}`
       response = await fetch(url);
 
@@ -120,46 +120,51 @@ const GamePage = () => {
 
   return (
     <main>
-      <Header />
+      <Header 
+        score={score}
+        total={questions.length}
+        category={category}
+        difficulty={difficulty}
+      />
       <div className='wrapper'>
-        <section className='quiz'>
-          {question
-            ? (<section className='quiz'>
-              <div className='question'>
-                <h2>{questionNumber}. {question.question}</h2>
-              </div>
-              <div className='answer-box'>
-                <ul>
-                  {question.choices.map((choice, index) => (
-                    <AnswerCard
-                      key={index}
-                      choice={choice}
-                      correct={question.answer}
-                      selected={selected}
-                      onClick={() => handleAnswerClick(choice)}
-                    />
-                  ))}
-                </ul>
-              </div>
-              <div className='result'>
-                {
-                  !selected ? (<></>)
-                    : (selected && correct
-                      ? (
-                        <h2>Correct -</h2>
-                      )
-                      : (
-                        <h2>Incorrect -</h2>
-                      )
-                    )}
-                <h2>Score: {score}</h2>
-              </div>
-            </section>
-            )
-            : (<Loader />)
-          }
 
-        </section>
+        {question
+          ? (<section className='quiz'>
+            <div className='question'>
+              <h2>{questionNumber}. {question.question}</h2>
+            </div>
+            <div className='answer-box'>
+              <ul>
+                {question.choices.map((choice, index) => (
+                  <AnswerCard
+                    key={index}
+                    choice={choice}
+                    correct={question.answer}
+                    selected={selected}
+                    onClick={() => handleAnswerClick(choice)}
+                  />
+                ))}
+              </ul>
+            </div>
+            <div className='result'>
+              {
+                !selected ? (<></>)
+                  : (selected && correct
+                    ? (
+                      <h2>Correct -</h2>
+                    )
+                    : (
+                      <h2>Incorrect -</h2>
+                    )
+                  )}
+              <h2>Score: {score}</h2>
+            </div>
+          </section>
+          )
+          : (<Loader />)
+        }
+
+
       </div>
     </main>
   )

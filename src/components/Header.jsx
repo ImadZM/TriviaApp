@@ -1,8 +1,9 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation  } from 'react-router-dom'
 
-const Header = () => {
+const Header = ({score,total,category,difficulty}) => {
     const navigate = useNavigate();
+    const location = useLocation();
 
     const goToHome = () => {
         navigate('/');
@@ -11,20 +12,25 @@ const Header = () => {
         navigate('/ResultPage', {
             state: {
                 score,
-                total: questions.length,
+                total,
                 category,
                 difficulty
             }
         });
     }
 
+    const isHomePage = location.pathname === '/';
+    const isGamePage = location.pathname === '/GamePage';
+    const isResultPage = location.pathname === '/ResultPage';
+
     return (
         <header>
             <h1>Quizzat</h1>
-            <navigator>
-                <button className='navigation-button' onClick={goToHome}>Home</button>
-                <button className='navigation-button' onClick={goToResults}>End Quiz</button>
-            </navigator>
+            <div className='navigator'>
+                {!isHomePage && <button className='navigation-button' onClick={goToHome}>Home</button>}
+                {isGamePage && <button className='navigation-button' onClick={goToResults}>End Quiz</button>}
+                
+            </div>
         </header>
     )
 }
