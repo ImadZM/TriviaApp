@@ -1,0 +1,55 @@
+[
+  {
+    "category": "Science",
+    "question": "What is the chemical symbol for gold?",
+    "choices": ["Au", "Ag", "Gd", "Go"],
+    "answer": "Au"
+  },
+  {
+    "category": "Geography",
+    "question": "Which country has the largest land area?",
+    "choices": ["USA", "China", "Russia", "Canada"],
+    "answer": "Russia"
+  },
+  {
+    "category": "History",
+    "question": "Who was the first President of the United States?",
+    "choices": ["Thomas Jefferson", "George Washington", "Abraham Lincoln", "John Adams"],
+    "answer": "George Washington"
+  },
+  {
+    "category": "Math",
+    "question": "What is the value of Pi (approximately)?",
+    "choices": ["2.14", "3.14", "3.41", "4.13"],
+    "answer": "3.14"
+  },
+  {
+    "category": "Literature",
+    "question": "Who wrote 'Romeo and Juliet'?",
+    "choices": ["William Wordsworth", "Charles Dickens", "Jane Austen", "William Shakespeare"],
+    "answer": "William Shakespeare"
+  },
+  {
+    "category": "Technology",
+    "question": "What does HTML stand for?",
+    "choices": [
+      "Hyper Text Markup Language",
+      "Home Tool Markup Language",
+      "Hyperlinks and Text Markup Language",
+      "Highlevel Text Modeling Language"
+    ],
+    "answer": "Hyper Text Markup Language"
+  },
+  {
+    "category": "Sports",
+    "question": "How many players are there in a soccer team (on the field)?",
+    "choices": ["9", "10", "11", "12"],
+    "answer": "11"
+  },
+  {
+    "category": "Art",
+    "question": "Which painter is famous for the painting 'Starry Night'?",
+    "choices": ["Pablo Picasso", "Claude Monet", "Vincent van Gogh", "Leonardo da Vinci"],
+    "answer": "Vincent van Gogh"
+  }
+]

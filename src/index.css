@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Orbitron&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+  --color-primary: #0a0908;
+  --color-secondary: #1d1e2c;
+
+  --color-light-100: #ffead0;
+  --color-light-200: #b1740f;
+
+  --color-gray-100: #7d869c;
+
+  --color-dark-100: #731dd8;
+  --color-dark-200: #ef2d56;
+
+  --font-press-start: "Press Start 2P", sans-serif;
+  --font-audiowide: "Audiowide", sans-serif;
+
+
+  --breakpoint-xs: 480px;
+
+  --background-image-background: url("/bg3.png");
+  --background-image-header-bg: url("/header-bg.png");
+
+}
+
+@layer base {
+  body {
+    font-family: "Audiowide", serif;
+    font-optical-sizing: auto;
+    background: #0a0908;
+    cursor: default;
+  }
+
+  h1 {
+    @apply mx-auto max-w-4xl text-center text-5xl font-bold leading-tight tracking-[-1%] bg-gradient-to-br from-dark-100 to-primary bg-clip-text text-transparent sm:text-[64px] sm:leading-[76px];
+  }
+
+  h2 {
+    @apply text-2xl font-bold sm:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl font-bold sm:text-2xl;
+  }
+
+  main {
+    @apply min-h-screen bg-cover bg-center bg-no-repeat bg-background bg-gradient-to-br from-primary to-secondary overflow-hidden;
+  }
+
+  button,
+  select {
+    @apply cursor-pointer;
+  }
+
+  header {
+    @apply w-full p-10 bg-gradient-to-b from-light-100 to-dark-100 rounded-b-lg;
+  }
+
+}
+
+@layer components {
+  .wrapper {
+    @apply px-5 py-12 xs:p-10 max-w-7xl mx-auto flex flex-col relative z-10 min-h-[calc(100%-8%)] min-w-screen;
+  }
+
+  .content {
+    @apply w-full h-auto flex items-center justify-center;
+  }
+
+  .start-button {
+    @apply text-light-100 bg-gradient-to-b from-dark-100 to-primary hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-dark-100 rounded-lg px-5 py-2.5 text-center me-2 mb-2 mt-2 w-[40%] ml-[30%] font-press-start;
+  }
+
+  .game-card {
+    @apply flex flex-col mt-32 w-[90vw] max-w-[640px] p-4 bg-gradient-to-b from-light-100 to-dark-100 rounded-3xl shadow-sm;
+  }
+
+
+  .options {
+    @apply mt-4 flex flex-wrap justify-evenly w-full;
+  }
+
+  .selector {
+    @apply flex flex-col sm:flex-row items-center gap-2 w-full sm:w-auto p-2 text-primary;
+  }
+
+  .selector label {
+    @apply px-2 py-1;
+  }
+
+  .dropdown {
+    @apply text-primary bg-light-100 border border-primary rounded px-2 py-1;
+  }
+
+
+
+
+  .question {
+    @apply mt-10 mb-10 p-6 bg-gradient-to-l from-gray-100 to-light-100 rounded-2xl;
+  }
+
+  .question h2 {
+    @apply bg-gradient-to-b from-primary to-dark-100 bg-clip-text text-transparent;
+  }
+
+  .answer-box {
+    @apply flex justify-center items-center w-full;
+  }
+
+  .quiz ul {
+    @apply flex flex-col gap-4 items-center w-full;
+  }
+
+  .answer {
+    @apply text-primary bg-gradient-to-br from-light-100 to-dark-100 hover:bg-gradient-to-bl rounded-lg px-5 py-2.5 text-center me-2 w-[40%] font-press-start;
+  }
+
+  .answerCorrect {
+    @apply text-light-100 bg-gradient-to-br from-green-900 to-green-500 hover:bg-gradient-to-bl rounded-lg px-5 py-2.5 text-center me-2 w-[40%] font-press-start;
+  }
+
+  .answerWrong {
+    @apply text-light-100 bg-gradient-to-br from-red-900 to-red-500 hover:bg-gradient-to-bl rounded-lg px-5 py-2.5 text-center me-2 w-[40%] font-press-start;
+  }
+
+  .result {
+    @apply ml-6 mt-16 p-4 w-fit flex gap-4 bg-gradient-to-l from-gray-100 to-light-100 rounded-2xl text-dark-100 text-center;
+  }
+
+  .result h2 {
+    @apply bg-gradient-to-b from-primary to-dark-100 bg-clip-text text-transparent;
+  }
+
+  .final {
+    @apply flex flex-col mt-32 w-[90vw] max-w-[640px] p-4 bg-gradient-to-b from-light-100 to-dark-100 rounded-3xl shadow-sm;
+  }
+
+  .navigation-button {
+    @apply text-light-100 bg-gradient-to-b from-dark-100 to-primary hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-dark-100 rounded-lg px-5 py-2.5 text-center font-press-start;
+  }
+
+}
