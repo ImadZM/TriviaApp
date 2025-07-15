@@ -7,6 +7,7 @@ import Header from '../components/Header';
 
 
 const GamePage = () => {
+  //Initalizing all the states
   const [question, setQuestion] = useState('');
   const [questionNumber, setQuestionNumber] = useState(1);
   const [questions, setQuestions] = useState([]);
@@ -17,15 +18,16 @@ const GamePage = () => {
   const [finished, setFinished] = useState(false);
   const [score, setScore] = useState(0);
 
+
+
+  //Getting category and difficulty from Home.jsx
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const category = queryParams.get('category') || 'random';
   const difficulty = queryParams.get('difficulty') || 'easy';
 
+  //routing to Resultpage.jsx
   const navigate = useNavigate();
-
-
-
   const goToResults = () => {
     navigate('/ResultPage', {
       state: {
@@ -37,6 +39,9 @@ const GamePage = () => {
     });
   }
 
+
+
+  //Fetching questions from Trivia API and storing them
   const fetchQuestion = async () => {
     try {
       let response;
@@ -75,6 +80,8 @@ const GamePage = () => {
 
   }
 
+
+  //load a new question
   const loadNewQuestion = () => {
     if (usedIndices.length === questions.length) {
       setCurrentIndex(0);
@@ -92,6 +99,8 @@ const GamePage = () => {
     setUsedIndices(prev => [...prev, randomIndex]);
   }
 
+
+  //Handling answer selection
   const handleAnswerClick = async (choice) => {
     if (selected) { return; }
     setSelected(true);
@@ -109,18 +118,24 @@ const GamePage = () => {
 
   }
 
+  //UseEffect to fetch questions when page loads
   useEffect(() => {
     fetchQuestion()
+    translateText()
   }, [])
+
+  //UseEffect to go to result page when all questions finish
   useEffect(() => {
     if (finished) {
       goToResults();
     }
   }, [finished])
 
+
+  //Page contents
   return (
     <main>
-      <Header 
+      <Header
         score={score}
         total={questions.length}
         category={category}
