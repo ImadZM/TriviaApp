@@ -121,7 +121,6 @@ const GamePage = () => {
   //UseEffect to fetch questions when page loads
   useEffect(() => {
     fetchQuestion()
-    translateText()
   }, [])
 
   //UseEffect to go to result page when all questions finish
